@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GARGOLA - Cartel Codigo</title>
+
+  <!-- FUENTE ARIAL BOLD OBLIGATORIA -->
+  <style>
+    @font-face {
+      font-family: 'Arial Bold';
+      src: url('Arial-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: transparent;
+      overflow: hidden;
+      /* FUENTE APLICADA EN TODO */
+      font-family: 'Arial Bold', Arial, sans-serif !important;
+      font-weight: bold;
+    }
+
+    .cartel {
+      position: absolute;
+      top: 50%;
+      right: 4vw;
+      transform: translateY(-50%);
+      animation: slowVibrate 5s ease-in-out infinite;
+      z-index: 999;
+    }
+
+    .plate {
+      background: linear-gradient(145deg, #1e1e2e, #12121a);
+      padding: 28px 50px;
+      border-radius: 24px;
+      border: 3px solid #f6e5d3;
+      box-shadow: 
+        0 0 40px rgba(246,229,211,0.5),
+        inset 0 0 30px rgba(246,229,211,0.15),
+        0 15px 35px rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plate::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(246,229,211,0.15), transparent);
+      animation: slowShine 8s linear infinite;
+      pointer-events: none;
+    }
+
+    .using {
+      display: block;
+      font-size: 1.9vw;
+      color: #f6e5d3;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    .code {
+      display: block;
+      font-size: 7.5vw;
+      color: #f6e5d3;
+      letter-spacing: 10px;
+      text-shadow: 0 0 20px #f6e5d3, 0 0 40px #f6e5d3, 0 0 70px rgba(246,229,211,0.8);
+      margin: 8px 0;
+    }
+
+    .recarga {
+      display: block;
+      font-size: 2.4vw;
+      color: #f6e5d3;
+      letter-spacing: 4px;
+      opacity: 0.9;
+    }
+
+    /* VIBRACIÓN LENTA Y ELEGANTE */
+    @keyframes slowVibrate {
+      0%   { transform: translateY(-50%) translateX(0)    rotate(0deg); }
+      15%  { transform: translateY(-50%) translateX(4px)  rotate(0.8deg); }
+      30%  { transform: translateY(-50%) translateX(-3px) rotate(-0.6deg); }
+      50%  { transform: translateY(-50%) translateX(2px)  rotate(0.5deg); }
+      70%  { transform: translateY(-50%) translateX(-2px) rotate(-0.4deg); }
+      100% { transform: translateY(-50%) translateX(1px)  rotate(0.2deg); }
+    }
+
+    @keyframes slowShine {
+      0%   { left: -200%; }
+      100% { left: 200%; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1600px) {
+      .using { font-size: 2.4vw; }
+      .code  { font-size: 9.5vw; }
+      }
+      .recarga { font-size: 3.2vw; }
+      .plate { padding: 22px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cartel">
+    <div class="plate">
+      <span class="using">USANDO EL CÓDIGO</span>
+      <span class="code">GARGOLA</span>
+      <span class="recarga">+ Recarga</span>
+    </div>
+  </div>
+
+</body>
+</html>
